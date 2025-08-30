@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+   <!-- Scrim per il menu mobile -->
+   <div class="scrim" id="scrim" hidden></div>
+
+   <header class="site-header">
+     <a class="logo" href="index.html" aria-label="Amina Canoska, home">
+       amin<span>AC</span>anoska<span class="dot">.</span>
+     </a>
+ 
+     <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Apri menu" id="navToggle">
+       <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+     </button>
+ 
+     <nav class="site-nav" id="siteNav" data-collapsed="true" aria-label="Navigazione principale">
+       <ul class="nav-list">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank">Portfolio</a></li>
+         <li><a href="all-articles.html" aria-current="page">Articoli</a></li>
+         <li><a href="contact.html">Contatti</a></li>
+         <li><a href="faq.html">FAQ</a></li>
+       </ul>
+ 
+       <form class="nav-search" action="search.html" method="get" role="search">
+         <label for="q" class="sr-only">Cerca</label>
+         <input id="q" type="search" name="query" placeholder="Search..." required />
+         <button type="submit">Cerca</button>
+       </form>
+     </nav>
+   </header>
+
+  <div class="body-articles">  
+
+     <!-- HERO -->
+     <section class="hero-articles">
+        <div class="hero-text-articles">
+          <p class="kicker-articles">beyond</p>
+          <h1><span>WORDS,</span>beyond <span>WORLDS</span></h1>
+          <p class="sub-article">DELIVERS.</p>
+        </div>
+        <div class="hero-media-articles">
+          <img src="img/progetto2.png" alt="See Articles" class="my-img-articles"/>
+        </div>
+    </section>
+    <div class="articles-grid" id="articlesGrid" aria-live="polite">
+        <!-- Popolato da script.js con articles.json -->
+      </div>
+
+    </div>
+
+    
+      <script src="script.js" defer></script>
+</body>
+</html>

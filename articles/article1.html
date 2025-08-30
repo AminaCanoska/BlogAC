@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Systems nel 2025: minimalismo pragmatico</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f6fb;
+      color: #2d2239;
+      line-height: 1.6;
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 4px 12px rgba(125, 82, 192, 0.08);
+      border-left: 6px solid #7a4eb3;
+      border-radius: 10px;
+    }
+
+    .article-cover {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 1rem;
+      color: #5b2c91;
+    }
+
+    .meta {
+      color: #6b5786;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      margin-top: 0.5rem;
+    }
+
+    .tags span {
+      background: #e6dcf7;
+      color: #5b2c91;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+
+    p {
+      margin: 1.2rem 0;
+    }
+
+    blockquote {
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #f3e9fd;
+      border-left: 4px solid #9c6edd;
+      font-style: italic;
+      color: #4e3173;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scrim per il menu mobile -->
+  <div class="scrim" id="scrim" hidden></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Amina Canoska, home">
+      amin<span>AC</span>anoska<span class="dot">.</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Apri menu" id="navToggle">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" data-collapsed="true" aria-label="Navigazione principale">
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank">Portfolio</a></li>
+        <li><a href="../all-articles.html" target="_blank" aria-current="page">Articoli</a></li>
+        <li><a href="../contact.html" target="_blank">Contatti</a></li>
+        <li><a href="../faq.html" target="_blank">FAQ</a></li>
+      </ul>
+
+      <form class="nav-search" action="search.html" method="get" role="search">
+        <label for="q" class="sr-only">Cerca</label>
+        <input id="q" type="search" name="query" placeholder="Search..." required />
+        <button type="submit">Cerca</button>
+      </form>
+    </nav>
+  </header>
+  <article class="article-container">
+    <h1>Design Systems nel 2025: minimalismo pragmatico</h1>
+    <img src="../img/design-systems.jpg" alt="Design Systems" class="article-cover" />
+    <div class="meta">
+      Pubblicato il 1 Febbraio 2025
+      <div class="tags">
+        <span>#design</span>
+        <span>#ui</span>
+        <span>#processi</span>
+      </div>
+    </div>
+
+    <p>I Design System non sono più un “nice-to-have” per le grandi aziende: nel 2025 sono il cuore pulsante di ogni interfaccia digitale ben progettata. Ma dopo anni di iper-strutturazione, la nuova parola d’ordine è <strong>pragmatismo</strong>.</p>
+
+    <p>Il minimalismo non è solo uno stile visivo: è una filosofia progettuale che influenza componenti, documentazione e flussi decisionali. I team riducono l’overhead tecnico, snelliscono i processi e mantengono solo ciò che serve davvero. Il risultato? Un sistema leggero, comprensibile e veramente riutilizzabile.</p>
+
+    <blockquote>“Non serve avere un Design System perfetto. Serve averne uno che funziona per le persone che lo usano ogni giorno.”</blockquote>
+
+    <p>Nel 2025 vediamo una crescente integrazione tra <strong>Design Tokens</strong> e ambienti multi-brand, ma anche una maggiore attenzione all’<em>accessibilità by default</em>. Molti team adottano soluzioni ibride: Figma per la UI, Storybook per la documentazione, GitHub per il controllo di versione, il tutto orchestrato da CI/CD intelligenti.</p>
+
+    <p>Un’altra tendenza? <strong>Autonomia locale con coerenza globale</strong>. I team hanno più libertà nel creare nuove componenti, a patto che rispettino i principi chiave del sistema. Questo equilibrio tra rigore e flessibilità è uno dei segreti per far funzionare un Design System nel lungo periodo.</p>
+
+    <p>In conclusione, il 2025 premia chi riesce a semplificare senza perdere potenza: Design Systems pragmatici, coesi e sostenibili.</p>
+  </article>
+    <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">amin<span>AC</span>anoska<span class="dot">.</span></div>
+        <p class="muted">
+          © <span id="y"></span> Amina Canoska — Tutti i diritti riservati.
+        </p>
+      </div>
+      <div>
+        <h3>Link utili</h3>
+        <ul>
+          <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank" rel="noopener">Sito principale</a></li>
+          <li><a href="../all-articles.html">Articoli</a></li>
+          <li><a href="../contact.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Seguimi</h3>
+        <ul class="socials">
+          <li><a href="https://instagram.com/tuo" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- icona semplice -->
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+            Instagram
+          </a></li>
+          <li><a href="https://twitter.com/tuo" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3l-7.5 8.6L22 21h-6l-4.2-5.2L6.8 21H4l7.9-9.1L2 3h6l3.8 4.8L17.5 3z"/></svg>
+            X/Twitter
+          </a></li>
+          <li><a href="mailto:ciao@tuodominio.tld" aria-label="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v.4l-10 6.25L2 6.4V6a2 2 0 0 1 2-2Zm18 5.3V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.3l10 6.25 10-6.25Z"/></svg>
+            Email
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+    <script src="../script.js" defer></script>
+</body>
+</html>
+
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Contatti — Amina Canoska</title>
+  <meta name="description" content="Contatta Amina Canoska per collaborazioni, domande e feedback su articoli e progetti." />
+
+  <link rel="canonical" href="https://tuodominio.tld/contact.html" />
+  <link rel="icon" href="img/favicon.ico" />
+
+  <!-- OG/Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contatti — Amina Canoska" />
+  <meta property="og:description" content="Parliamo del tuo progetto: scrivimi per collaborazioni o domande." />
+  <meta property="og:image" content="https://tuodominio.tld/img/og-image.jpg" />
+  <meta property="og:url" content="https://tuodominio.tld/contact.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts + CSS progetto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto+Flex:opsz,wght@8..144,300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Contatti — Amina Canoska",
+    "url":"https://tuodominio.tld/contact.html",
+    "inLanguage":"it-IT",
+    "description":"Pagina di contatto per collaborazioni, domande e feedback."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scrim per menu mobile -->
+  <div class="scrim" id="scrim" hidden></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Amina Canoska, home">
+      amin<span>AC</span>anoska<span class="dot">.</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Apri menu" id="navToggle">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" data-collapsed="true" aria-label="Navigazione principale">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank" rel="noopener">Portfolio</a></li>
+        <li><a href="all-articles.html">Articoli</a></li>
+        <li><a href="contact.html" aria-current="page">Contatti</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+
+      <form class="nav-search" action="search.html" method="get" role="search">
+        <label for="q" class="sr-only">Cerca</label>
+        <input id="q" type="search" name="query" placeholder="Search..." required />
+        <button type="submit">Cerca</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <p class="kicker contatti">CONTATTI</p>
+          <h1><span>Parliamo</span> del tuo progetto.</h1>
+          <p class="sub">Pensieri, appunti e recensioni dal mio tavolo di lavoro.</p>
+          <a class="cta" href="all-articles.html">Scopri gli articoli</a>
+        </div>
+  
+        <div class="hero-media">
+          <img src="img/progetto.png" alt="Articles Drawing" class="my-img-contatti"/>
+        </div>
+      </section>
+
+    <!-- CONTATTI: info + form -->
+    <section class="contact">
+      <div class="contact-card">
+        <aside class="contact-info">
+          <h2>Come posso aiutarti?</h2>
+          <p>Raccontami brevemente l’idea o il problema. Più contesto → risposta migliore.</p>
+
+          <ul class="contact-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8l9 5 9-5zM19 4H5l7 4 7-4z"/></svg>
+              <a href="mailto:aminaworksonline@gmail.com">aminaworksonline@gmail.com</a>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
+              <a href="https://www.instagram.com/amina_canoska/" target="_blank" rel="noopener">Instagram</a>
+            </li>
+          </ul>
+
+          <p class="small-muted">Preferisci una call? Scrivimi e fissiamo uno slot.</p>
+        </aside>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgvzqkbe" method="POST" novalidate>
+          <div class="field">
+            <label for="name">Nome e cognome</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Es. Amina Canoska" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="nome@dominio.it" required />
+          </div>
+
+          <div class="field">
+            <label for="subject">Oggetto (opzionale)</label>
+            <input id="subject" name="subject" type="text" placeholder="Es. Collaborazione / Domanda / Feedback" />
+          </div>
+
+          <div class="field">
+            <label for="message">Messaggio</label>
+            <textarea id="message" name="message" rows="7" placeholder="Scrivi qui il tuo messaggio…" required></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <div class="sr-only" aria-hidden="true">
+            <label for="hp">Lascia vuoto</label>
+            <input id="hp" name="hp" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Consenso -->
+          <div class="field checkbox-field">
+            <label>
+              <input type="checkbox" name="consent" required />
+              Acconsento al trattamento dei dati secondo la
+              <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Invia</button>
+            <a class="btn ghost" href="index.html">Annulla</a>
+          </div>
+
+          <p id="formStatus" class="help" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">amin<span>AC</span>anoska<span class="dot">.</span></div>
+        <p class="muted">© <span id="y"></span> Amina Canoska — Tutti i diritti riservati.</p>
+      </div>
+      <div>
+        <h3>Link utili</h3>
+        <ul>
+          <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank" rel="noopener">Sito principale</a></li>
+          <li><a href="all-articles.html">Articoli</a></li>
+          <li><a href="contact.html" aria-current="page">Contatti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Seguimi</h3>
+        <ul class="socials">
+          <li><a href="https://instagram.com/tuo" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://twitter.com/tuo" target="_blank" rel="noopener">X/Twitter</a></li>
+          <li><a href="mailto:ciao@tuodominio.tld">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS nav condiviso -->
+  <script src="script.js" defer></script>
+  </body>
+  </html>

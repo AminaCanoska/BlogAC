@@ -1,0 +1,57 @@
+[
+    {
+      "slug": "design-sistemi-2025",
+      "title": "Design Systems nel 2025: minimalismo pragmatico",
+      "date": "2025-02-01",
+      "excerpt": "Cosa resta, cosa cambia e come mantenere un DS leggero ma potente.",
+      "cover": "img/design-systems.jpg",
+      "tags": ["design", "ui", "processi"],
+      "html": "articles/article1.html"
+    },
+    {
+      "slug": "scrivere-recensioni-oneste",
+      "title": "Scrivere recensioni oneste (e utili)",
+      "date": "2025-01-12",
+      "excerpt": "Come bilanciare empatia, numeri e opinioni senza perdere credibilità.",
+      "cover": "img/recensioni.jpg",
+      "tags": ["scrittura", "recensioni"],
+      "html": "articles/article2.html"
+    },
+    {
+      "slug": "toolchain-leggera",
+      "title": "La mia toolchain leggera per progetti personali",
+      "date": "2024-12-05",
+      "excerpt": "Troppa complessità uccide la creatività: ecco cosa uso e perché.",
+      "cover": "img/toolchain.jpg",
+      "tags": ["produttività", "dev"],
+      "html": "articles/article3.html"
+    },
+    {
+      "slug": "critica-costruttiva",
+      "title": "Critica costruttiva: anatomia di un feedback che aiuta",
+      "date": "2024-11-18",
+      "excerpt": "Struttura, tono e timing per far crescere i progetti (e le persone).",
+      "cover": "img/feedback.jpg",
+      "tags": ["soft skills", "team"],
+      "html": "articles/article4.html"
+    },
+    {
+      "slug": "accessibilita-prima",
+      "title": "Accessibilità prima di tutto: partire bene",
+      "date": "2024-09-27",
+      "excerpt": "Piccoli accorgimenti che cambiano l’esperienza per tutti.",
+      "cover": "img/a11y.jpg",
+      "tags": ["accessibilità", "web"],
+      "html": "articles/article5.html"
+    },
+    {
+      "slug": "routine-creativa",
+      "title": "Routine creativa: come evitare l’effetto burnout",
+      "date": "2024-08-03",
+      "excerpt": "Rituali brevi, spazi puliti e limiti chiari.",
+      "cover": "img/routine.jpg",
+      "tags": ["creatività", "benessere"],
+      "html": "articles/article5.html"
+    }
+  ]
+  

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Beyond Words, Beyond Worlds</title>
+  <meta name="description" content="Il blog personale di Amina Canoska: articoli, recensioni e revisioni su tecnologia, design e creatività." />
+
+  <!-- Canonical + favicon (aggiorna dominio e immagini) -->
+  <link rel="canonical" href="https://tuodominio.tld/" />
+  <link rel="icon" href="img/favicon.ico" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Amina Canoska — Blog personale" />
+  <meta property="og:description" content="Articoli, recensioni e revisioni su tecnologia, design e creatività." />
+  <meta property="og:image" content="https://tuodominio.tld/img/og-image.jpg" />
+  <meta property="og:url" content="https://tuodominio.tld/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amina Canoska — Blog personale" />
+  <meta name="twitter:description" content="Articoli, recensioni e revisioni su tecnologia, design e creatività." />
+  <meta name="twitter:image" content="https://tuodominio.tld/img/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto+Flex:opsz,wght@8..144,300..700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Amina Canoska — Blog",
+    "url":"https://tuodominio.tld/",
+    "description":"Articoli, recensioni e revisioni su tecnologia, design e creatività.",
+    "publisher":{"@type":"Person","name":"Amina Canoska"},
+    "inLanguage":"it-IT"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scrim per il menu mobile -->
+  <div class="scrim" id="scrim" hidden></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Amina Canoska, home">
+      amin<span>AC</span>anoska<span class="dot">.</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Apri menu" id="navToggle">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" data-collapsed="true" aria-label="Navigazione principale">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank">Portfolio</a></li>
+        <li><a href="all-articles.html">Articoli</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+
+      <form class="nav-search" action="search.html" method="get" role="search">
+        <label for="q" class="sr-only">Cerca</label>
+        <input id="q" type="search" name="query" placeholder="Search..." required />
+        <button type="submit">Cerca</button>
+      </form>
+    </nav>
+  </header>
+  <div id="toast" class="toast hidden">Nessun articolo trovato.</div>
+
+
+  <main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="kicker">beyond</p>
+    <h1><span>WORDS,</span>beyond <span>WORLDS.</span></h1>
+    <p class="sub">Pensieri, appunti e recensioni dal mio tavolo di lavoro.</p>
+    <a class="cta" href="all-articles.html">Scopri gli articoli</a>
+  </div>
+
+  <div class="hero-media">
+    <img src="img/blog4.jpg" alt="Blog-Img" width="360" class="my-img" />
+  </div>
+</section>
+
+
+    <!-- ARTICOLI (bozzetto) -->
+    <section class="articles" id="articles" aria-labelledby="articoliTitle">
+      <div class="section-head">
+        <h2 id="articoliTitle">Articoli recenti</h2>
+        <a class="see-all" href="all-articles.html" id="allArticlesBtns">Vedi tutti →</a>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid" aria-live="polite">
+        <!-- Popolato da script.js con articles.json -->
+      </div>
+    </section>
+
+    <!-- ABOUT ME dentro la home -->
+    <section class="about" id="about">
+      <div class="about-card">
+        <div class="about-media">
+          <img src="img/me.png" alt="Amina Canoska"/>
+        </div>
+        <div class="about-text">
+          <h2>Chi sono</h2>
+          <p>
+            Ciao! Sono Amina. Scrivo di tecnologia, design e creatività. Recensisco libri e scrivo articoli su ricerche riguardanti argomenti che mi appassionano.Qui trovi
+            articoli, recensioni e revisioni con un occhio pratico e critico.
+            Amo i progetti curati e le interfacce pulite.
+          </p>
+          <p class="small-muted">Per collaborazioni o domande:</p>
+          <p class="about-actions">
+            <a class="btn" href="contact.html">Contattami</a>
+            <a class="btn ghost" href="portfolio.html">Guarda il portfolio</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">amin<span>AC</span>anoska<span class="dot">.</span></div>
+        <p class="muted">
+          © <span id="y"></span> Amina Canoska — Tutti i diritti riservati.
+        </p>
+      </div>
+      <div>
+        <h3>Link utili</h3>
+        <ul>
+          <li><a href="https://aminacanoska.github.io/portfolio/" target="_blank" rel="noopener">Sito principale</a></li>
+          <li><a href="all-articles.html">Articoli</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Seguimi</h3>
+        <ul class="socials">
+          <li><a href="https://instagram.com/tuo" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- icona semplice -->
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+            Instagram
+          </a></li>
+          <li><a href="https://twitter.com/tuo" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3l-7.5 8.6L22 21h-6l-4.2-5.2L6.8 21H4l7.9-9.1L2 3h6l3.8 4.8L17.5 3z"/></svg>
+            X/Twitter
+          </a></li>
+          <li><a href="mailto:ciao@tuodominio.tld" aria-label="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v.4l-10 6.25L2 6.4V6a2 2 0 0 1 2-2Zm18 5.3V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.3l10 6.25 10-6.25Z"/></svg>
+            Email
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
