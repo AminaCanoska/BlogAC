@@ -172,10 +172,12 @@ if (form && input) {
           article.excerpt.toLowerCase().includes(query) ||
           article.tags.some(tag => tag.toLowerCase().includes(query))
         );
+        console.log("Match trovato:", match); // 👈 AGGIUNGI QUESTO
 
-        if (match) {
-          // window.location.href = match.html;
-          window.location.href = '/' + match.html.replace(/^\/+/, '');
+        if (match && match.html) {
+             const url = '/' + match.html.replace(/^\/+/, '');
+             console.log("Reindirizzo verso:", url); // 👈 E ANCHE QUESTO
+             window.location.href = url;
         } else {
           showToast("NESSUN ARTICOLO TROVATO.");
         }
