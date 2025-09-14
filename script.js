@@ -65,6 +65,7 @@ async function getArticlesJson() {
   try {
     const res = await fetch('../articles.json', { cache: 'no-store' });
     if (!res.ok) throw new Error('404 da root');
+    console.log(res)
     return await res.json();
   } catch (e1) {
     try {
@@ -174,13 +175,14 @@ if (form && input) {
         );
         console.log("Match trovato:", match); // 👈 AGGIUNGI QUESTO
 
+        // ...existing code...
         if (match && match.html) {
-             const url = '/' + match.html.replace(/^\/+/, '');
-             console.log("Reindirizzo verso:", url); // 👈 E ANCHE QUESTO
-             window.location.href = url;
+          // Usa percorso relativo, NON aggiungere lo slash iniziale
+           window.location.href = match.html;
         } else {
-          showToast("NESSUN ARTICOLO TROVATO.");
+         showToast("NESSUN ARTICOLO TROVATO.");
         }
+// ...existing code...
       })
       .catch(err => {
         console.error("Errore:", err);
