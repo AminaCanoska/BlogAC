@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===== Funzione condivisa per caricare articles.json =====
 async function getArticlesJson() {
   try {
-    const res = await fetch('/articles.json', { cache: 'no-store' });
+    const res = await fetch('../articles.json', { cache: 'no-store' });
     if (!res.ok) throw new Error('404 da root');
     return await res.json();
   } catch (e1) {
@@ -200,7 +200,7 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove("show");
     toast.classList.add("hidden");
-  }, 3000);
+  }, 2000);
 }
 
 // ===== FAQ =====

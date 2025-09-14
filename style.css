@@ -99,6 +99,7 @@ body{
     padding: 0.55rem 0.7rem;
     border-radius: 10px;
     border: 1px solid #e5e0ec;
+    font-size: 1rem;
   }
   .nav-search input:focus {
     outline: 3px solid var(--ring);
