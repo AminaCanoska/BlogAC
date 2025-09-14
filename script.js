@@ -63,18 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===== Funzione condivisa per caricare articles.json =====
 async function getArticlesJson() {
   try {
-    const res = await fetch('../articles.json', { cache: 'no-store' });
+    const res = await fetch('/articles.json', { cache: 'no-store' });
     if (!res.ok) throw new Error('404 da root');
     console.log(res)
     return await res.json();
-  } catch (e1) {
-    try {
-      const res = await fetch('articles.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('404 da percorso relativo');
-      return await res.json();
-    } catch (e2) {
+  } catch (e) {
       throw new Error('Errore nel caricamento del JSON');
-    }
   }
 }
 
