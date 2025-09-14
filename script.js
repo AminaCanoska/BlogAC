@@ -60,25 +60,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
 
+// ===== Funzione condivisa per caricare articles.json =====
+async function getArticlesJson() {
+  try {
+    const res = await fetch('/articles.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('404 da root');
+    return await res.json();
+  } catch (e1) {
+    try {
+      const res = await fetch('articles.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('404 da percorso relativo');
+      return await res.json();
+    } catch (e2) {
+      throw new Error('Errore nel caricamento del JSON');
+    }
+  }
+}
 
-// ===== Articoli da JSON (bozzetto) =====
-async function loadArticles(){
+// ===== Articoli da JSON =====
+async function loadArticles() {
   const grid = document.getElementById('articlesGrid');
   if (!grid) return;
-  try{
-    const res = await fetch('articles.json', {cache: 'no-store'});
-    const items = await res.json();
 
-    // Mostra i primi 6
-    items.slice(0,6).forEach(post => {
+  try {
+    const items = await getArticlesJson();
+
+    items.slice(0, 6).forEach(post => {
       const a = document.createElement('a');
-      console.log(a);
-      a.href = `articles.html?slug=${encodeURIComponent(post.slug)}`;
+      a.href = post.html;
       a.className = 'card';
-      a.addEventListener("click", openArticle);
-      function openArticle(){
-        window.open(post.html, "_blank");
-      }
 
       a.innerHTML = `
         <img class="thumb" src="${post.cover}" alt="${post.title}" loading="lazy">
@@ -88,23 +98,26 @@ async function loadArticles(){
           </div>
           <h3>${post.title}</h3>
           <p class="excerpt">${post.excerpt}</p>
-          <div class="date">${new Date(post.date).toLocaleDateString('it-IT', {year:'numeric', month:'long', day:'numeric'})}</div>
+          <div class="date">${new Date(post.date).toLocaleDateString('it-IT', {
+            year: 'numeric', month: 'long', day: 'numeric'
+          })}</div>
         </div>
       `;
+
       grid.appendChild(a);
     });
-  } catch(err){
+
+  } catch (err) {
     console.error('Errore caricamento articoli:', err);
     const p = document.createElement('p');
     p.textContent = 'Non riesco a caricare gli articoli al momento.';
     grid.appendChild(p);
   }
 }
+
 document.addEventListener('DOMContentLoaded', loadArticles);
 
-
-
-
+// ===== CONTACT FORM =====
 document.addEventListener('DOMContentLoaded', () => {
   const f = document.getElementById('contactForm');
   const statusEl = document.getElementById('formStatus');
@@ -134,22 +147,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-//LOGICA PER IL SEARCH BAR
-  const form = document.querySelector(".nav-search");
-  const input = document.getElementById("q");
-  const resultBox = document.getElementById("search-result");
 
+// ===== SEARCH BAR =====
+const form = document.querySelector(".nav-search");
+const input = document.getElementById("q");
+const resultBox = document.getElementById("search-result");
+
+if (form && input) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     const query = input.value.trim().toLowerCase();
 
+    input.blur();
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+
     if (!query) return;
 
-    fetch("articles.json")
-      .then(res => {
-        if (!res.ok) throw new Error("Errore nel caricamento del JSON");
-        return res.json();
-      })
+    getArticlesJson()
       .then(articles => {
         const match = articles.find(article =>
           article.title.toLowerCase().includes(query) ||
@@ -158,18 +174,25 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         if (match) {
-          window.location.href = match.html;
+          // window.location.href = match.html;
+          window.location.href = '/' + match.html.replace(/^\/+/, '');
         } else {
-          showToast("Nessun articolo trovato.");
+          showToast("NESSUN ARTICOLO TROVATO.");
         }
       })
       .catch(err => {
         console.error("Errore:", err);
-        resultBox.textContent = "Impossibile cercare gli articoli in questo momento.";
+        if (resultBox) {
+          resultBox.textContent = "Impossibile cercare gli articoli in questo momento.";
+        }
       });
   });
-  function showToast(message) {
+}
+
+// ===== TOAST =====
+function showToast(message) {
   const toast = document.getElementById("toast");
+  if (!toast) return;
   toast.textContent = message;
   toast.classList.remove("hidden");
   toast.classList.add("show");
@@ -177,29 +200,27 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     toast.classList.remove("show");
     toast.classList.add("hidden");
-  }, 3000); // Il messaggio scompare dopo 3 secondi
+  }, 3000);
 }
-//SEZIONE FAQ 
-  document.addEventListener("DOMContentLoaded", () => {
-    const faqQuestions = document.querySelectorAll(".faq-question");
 
-    faqQuestions.forEach(button => {
-      button.addEventListener("click", () => {
-        const expanded = button.getAttribute("aria-expanded") === "true";
-        const answer = button.nextElementSibling;
+// ===== FAQ =====
+document.addEventListener("DOMContentLoaded", () => {
+  const faqQuestions = document.querySelectorAll(".faq-question");
 
-        // Chiudi tutte le altre domande (comportamento accordion singolo)
-        faqQuestions.forEach(btn => {
-          btn.setAttribute("aria-expanded", "false");
-          btn.nextElementSibling.hidden = true;
-        });
+  faqQuestions.forEach(button => {
+    button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      const answer = button.nextElementSibling;
 
-        // Se non era già aperta, aprila
-        if (!expanded) {
-          button.setAttribute("aria-expanded", "true");
-          answer.hidden = false;
-        }
+      faqQuestions.forEach(btn => {
+        btn.setAttribute("aria-expanded", "false");
+        btn.nextElementSibling.hidden = true;
       });
+
+      if (!expanded) {
+        button.setAttribute("aria-expanded", "true");
+        answer.hidden = false;
+      }
     });
   });
-
+});

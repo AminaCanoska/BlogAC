@@ -129,8 +129,14 @@ body{
 }
 
 .toast.show {
+  top: 30%;
   opacity: 1;
   pointer-events: auto;
+  width: 60vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toast.hidden {
